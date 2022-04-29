@@ -27,13 +27,25 @@ describe("Tests Para studentservice", () => {
         ],
         previousCourses: 1,
         haveCertification: true}];
-        const studentbyname = studentservices.filtercertificationtrue(certificate, true);
-        expect(studentbyname[0].name).toBe("warren");
+        const studentrue = studentservices.filtercertificationtrue(certificate, true);
+        expect(studentrue[0].name).toBe("Warren");
      
     });
 
-
-
-
+    test("Requerimiento cuatro para saber si es certificado es falso", () => { 
+        const certificate = [{ id: "6264d5d89f1df827eb84bb23",
+        name: "Warren",
+        email: "Todd@visualpartnership.xyz",
+        credits: 508,
+        enrollments: [
+          "Visual Thinking Intermedio",
+          "Visual Thinking Avanzado"
+        ],
+        previousCourses: 1,
+        haveCertification: false}];
+        const studentfalse = studentservices.filtercertificationfalse(certificate, false);
+        expect(studentfalse[0].name).toBe("Warren");
+     
+    });
 
 });
