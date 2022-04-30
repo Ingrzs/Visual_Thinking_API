@@ -41,7 +41,7 @@ describe("Tests Para studentservice", () => {
      
     });
 
-    test("Requerimiento cinco para obtener estudiante con creditos mayor a 500", () => { 
+    test("Requerimiento cinco para obtener estudiante con creditos menor a 500", () => { 
         const students = [ {name: "Warren",credits: 408,}];
         const studentbyncredit = studentservices.filtercredits(students);
         expect(studentbyncredit[0].name).toBe("Warren");
