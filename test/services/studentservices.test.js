@@ -17,35 +17,36 @@ describe("Tests Para studentservice", () => {
     });
 
     test("Requerimiento tres para saber si es certificado es true", () => { 
-        const certificate = [{ id: "6264d5d89f1df827eb84bb23",
-        name: "Warren",
+        const certificate = [{ 
         email: "Todd@visualpartnership.xyz",
-        credits: 508,
-        enrollments: [
-          "Visual Thinking Intermedio",
-          "Visual Thinking Avanzado"
-        ],
-        previousCourses: 1,
         haveCertification: true}];
         const studentrue = studentservices.filtercertificationtrue(certificate, true);
-        expect(studentrue[0].name).toBe("Warren");
+        expect(studentrue[0].email).toBe("Todd@visualpartnership.xyz");
      
     });
 
     test("Requerimiento cuatro para saber si es certificado es falso", () => { 
-        const certificate = [{ id: "6264d5d89f1df827eb84bb23",
-        name: "Warren",
+        const certificate = [{
         email: "Todd@visualpartnership.xyz",
-        credits: 508,
-        enrollments: [
-          "Visual Thinking Intermedio",
-          "Visual Thinking Avanzado"
-        ],
-        previousCourses: 1,
         haveCertification: false}];
         const studentfalse = studentservices.filtercertificationfalse(certificate, false);
-        expect(studentfalse[0].name).toBe("Warren");
+        expect(studentfalse[0].email).toBe("Todd@visualpartnership.xyz");
      
     });
+
+    test("Requerimiento cinco para obtener estudiante con creditos mayor a 500", () => { 
+        const students = [ {name: "Warren",credits: 508,}];
+        const studentbyncredit = studentservices.filtercredits(students);
+        expect(studentbyncredit[0].name).toBe("Warren");
+     
+    });
+
+    test("Requerimiento cinco para obtener estudiante con creditos mayor a 500", () => { 
+        const students = [ {name: "Warren",credits: 408,}];
+        const studentbyncredit = studentservices.filtercredits(students);
+        expect(studentbyncredit[0].name).toBe("Warren");
+     
+    });
+
 
 });
