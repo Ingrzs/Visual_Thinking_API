@@ -17,4 +17,9 @@ describe("Tests Para studentcontroller", () => {
         const studentfalse = studentcontroller.getcertificationfalse(false)
         expect(studentfalse[0].email).toBe("Camacho@visualpartnership.xyz")
     })
+
+    test("Requerimientos de creditos > 500",()=>{
+     const studentcredit = studentcontroller.filtercredit(501)
+     expect(studentcredit[0].name).toBe("Warren")
+    })
 })
