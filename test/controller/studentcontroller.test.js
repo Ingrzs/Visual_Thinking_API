@@ -1,4 +1,4 @@
-const studentcontroller = require("./../../lib/controllers/studentcontroller")
+const studentcontroller = require("./../../lib/controllers/studentcontroller");
 
 describe("Tests Para studentcontroller", () => {
 
@@ -9,12 +9,12 @@ describe("Tests Para studentcontroller", () => {
 
 
     test("Requerimientos para certificados true",()=>{
-        const studentrue = studentcontroller.getcertificationtrue(true)
-        expect(studentrue[0]).toBe("Todd@visualpartnership.xyz")
-    })
+        const studentrue = studentcontroller.getcertificationtrue(true);
+        expect(studentrue[0]).toBe("Todd@visualpartnership.xyz");
+    });
 
     test("Requerimientos de creditos > 500",()=>{
-     const studentcredit = studentcontroller.filtercredit(501)
-     expect(studentcredit[0]).toBe("Warren")
-    })
-})
+        const studentcredit = studentcontroller.filtercredit(501);
+        expect(studentcredit[0]).toBe("Warren");
+    });
+});

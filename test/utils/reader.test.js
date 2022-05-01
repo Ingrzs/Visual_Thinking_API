@@ -1,4 +1,4 @@
-const Reader = require("./../../lib/utils/reader")
+const Reader = require("./../../lib/utils/reader");
 
 describe("Tests Para Reader", () => {
 

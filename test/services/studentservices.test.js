@@ -1,4 +1,4 @@
-const studentservices = require("./../../lib/services/studentservices")
+const studentservices = require("./../../lib/services/studentservices");
 
 describe("Tests Para studentservice", () => {
 
@@ -18,8 +18,8 @@ describe("Tests Para studentservice", () => {
 
     test("Requerimiento tres para saber si es certificado es true", () => { 
         const certificate = [{ 
-        email: "Todd@visualpartnership.xyz",
-        haveCertification: true}];
+            email: "Todd@visualpartnership.xyz",
+            haveCertification: true}];
         const studentrue = studentservices.filtercertificationtrue(certificate, true);
         expect(studentrue[0]).toBe("Todd@visualpartnership.xyz");
      
