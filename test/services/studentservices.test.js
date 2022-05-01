@@ -21,28 +21,13 @@ describe("Tests Para studentservice", () => {
         email: "Todd@visualpartnership.xyz",
         haveCertification: true}];
         const studentrue = studentservices.filtercertificationtrue(certificate, true);
-        expect(studentrue[0].email).toBe("Todd@visualpartnership.xyz");
+        expect(studentrue[0]).toBe("Todd@visualpartnership.xyz");
      
     });
 
-    test("Requerimiento cuatro para saber si es certificado es falso", () => { 
-        const certificate = [{
-        email: "Todd@visualpartnership.xyz",
-        haveCertification: false}];
-        const studentfalse = studentservices.filtercertificationfalse(certificate, false);
-        expect(studentfalse[0].email).toBe("Todd@visualpartnership.xyz");
-     
-    });
 
     test("Requerimiento cinco para obtener estudiante con creditos mayor a 500", () => { 
         const students = [ {name: "Warren",credits: 508,}];
-        const studentbyncredit = studentservices.filtercredits(students);
-        expect(studentbyncredit[0].name).toBe("Warren");
-     
-    });
-
-    test("Requerimiento cinco para obtener estudiante con creditos menor a 500", () => { 
-        const students = [ {name: "Warren",credits: 408,}];
         const studentbyncredit = studentservices.filtercredits(students);
         expect(studentbyncredit[0].name).toBe("Warren");
      

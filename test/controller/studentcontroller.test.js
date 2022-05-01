@@ -10,16 +10,11 @@ describe("Tests Para studentcontroller", () => {
 
     test("Requerimientos para certificados true",()=>{
         const studentrue = studentcontroller.getcertificationtrue(true)
-        expect(studentrue[0].email).toBe("Todd@visualpartnership.xyz")
-    })
-
-    test("Requerimientos para certificados false",()=>{
-        const studentfalse = studentcontroller.getcertificationfalse(false)
-        expect(studentfalse[0].email).toBe("Camacho@visualpartnership.xyz")
+        expect(studentrue[0]).toBe("Todd@visualpartnership.xyz")
     })
 
     test("Requerimientos de creditos > 500",()=>{
      const studentcredit = studentcontroller.filtercredit(501)
-     expect(studentcredit[0].name).toBe("Warren")
+     expect(studentcredit[0]).toBe("Warren")
     })
 })
